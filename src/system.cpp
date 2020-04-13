@@ -13,6 +13,7 @@ using std::size_t;
 using std::string;
 using std::vector;
 
+// Initial commit from Linux virtual machine
 // Initial commit from virtual machine
 // Initial commit
 // TODO: Return the system's CPU
