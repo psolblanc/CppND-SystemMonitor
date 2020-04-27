@@ -4,6 +4,7 @@
 #include <fstream>
 #include <regex>
 #include <string>
+#include <iostream>
 
 namespace LinuxParser {
 // Paths
@@ -26,6 +27,9 @@ int TotalProcesses();
 int RunningProcesses();
 std::string OperatingSystem();
 std::string Kernel();
+float computeMemoryUtilization(float mData[4]);
+
+// struct Memory;
 
 // CPU
 enum CPUStates {
