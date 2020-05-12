@@ -16,12 +16,15 @@ class System {
   int TotalProcesses();               // TODO: See src/system.cpp
   int RunningProcesses();             // TODO: See src/system.cpp
   std::string Kernel();               // TODO: See src/system.cpp
-  std::string OperatingSystem();      
+  std::string OperatingSystem();
+  void setProcessesToDisplay(std::vector<int> vDisplay);
+  void OrderAllPidsAndSetProcessesToDisplay(std::vector<int> vec);      
 
   // TODO: Define any necessary private members
  private:
   Processor cpu_ = {};
   std::vector<Process> processes_ = {};
+  std::vector<int> pidsOfProcessesToDisplay = {};
 };
 
 #endif

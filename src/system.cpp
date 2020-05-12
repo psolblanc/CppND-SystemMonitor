@@ -20,13 +20,23 @@ using std::vector;
 Processor& System::Cpu() { return cpu_; }
 
 // TODO: Return a container composed of the system's processes
-vector<Process>& System::Processes() { 
-    // Takes all the Processes
-    // This function is a setter and a getter at the same time
-    // Ordering and takes 10 most used processes
-    // Assing/create the private member processes of system 
-    // class composed of 10 instances of class process 
+vector<Process>& System::Processes() {
+    std::vector<int> allProcessesPids = LinuxParser::Pids();
+    OrderAllPidsAndSetProcessesToDisplay(allProcessesPids);
+
+    for (int i=0; i< pidsOfProcessesToDisplay.size(); ++i){
+        Process *currentProcess;
+        currentProcess->setPidOfProcess(pidsOfProcessesToDisplay[i]);
+        this->processes_.push_back(currentProcess);
+    }
     return processes_; }
+
+void System::OrderAllPidsAndSetProcessesToDisplay(std::vector<int> vec){
+
+    // ordering all the processes
+    this->pidsOfProcessesToDisplay.push_back(vec[0]);
+}      
+
 
 // TODO: Return the system's kernel identifier (string)
 std::string System::Kernel() { 
